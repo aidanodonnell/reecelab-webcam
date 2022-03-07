@@ -1,11 +1,11 @@
 // Set constraints for the video stream
-var constraints = { video: { facingMode: "user" }, audio: false };
+var constraints = { video: { facingMode: "environment" }, audio: false };
 var track = null;
 
 // Define constants
 const cameraView = document.querySelector("#camera--view"),
     cameraOutput = document.querySelector("#camera--output"),
-    cameraSensor = document.querySelector("#camera--sensor");
+    cameraSensor = document.querySelector("#camera--sensor")
 
 // Access the device camera and stream to cameraView
 function cameraStart() {
@@ -18,6 +18,7 @@ function cameraStart() {
         .catch(function(error) {
             console.error("Oops. Something is broken.", error);
         });
+}
 
 // Start the video stream when the window loads
 window.addEventListener("load", cameraStart, false);
